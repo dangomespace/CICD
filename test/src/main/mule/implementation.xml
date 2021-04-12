@@ -90,7 +90,6 @@ output application/json
 			</ee:variables>
 		</ee:transform>
 		<flow-ref doc:name="getTransactionsForGivenAccountsFlow" doc:id="3cd5eec0-89d5-4216-a92b-c1b7a413b60d" name="getTransactionsForGivenAccountsFlow"/>
-		<logger level="INFO" doc:name="Logger" doc:id="a3f7d5a1-9db1-4740-842b-a89fbffed4b4" />
 	
 </flow>
 	<flow name="getTransactionsForGivenAccountsFlow" doc:id="eb10dd18-29da-4041-8552-e5d7431361c6" >
