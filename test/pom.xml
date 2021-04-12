@@ -25,6 +25,22 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
+					<cloudHubDeployment>
+				      <uri>https://anypoint.mulesoft.com</uri>
+				      <muleVersion>${app.runtime}</muleVersion>
+				      <username>${username}</username>										<!-- credentials -->
+				      <password>${password}</password>	
+				      <applicationName>${cloudhub.application.name}</applicationName>
+				      <businessGroup>${business}</businessGroup>
+				      <environment>${environment}</environment>					 			<!-- defines the env on ch - dev/test/uat/etc -->
+				      <region>${region}</region>
+				      <workers>${workers}</workers>
+				      <workerType>${workerType}</workerType>
+				      <objectStoreV2>true</objectStoreV2> 									<!-- need to define this of OS to work on mule 4 onw -->
+				      <properties>
+				        <key>value</key>
+				      </properties>
+				    </cloudHubDeployment>
 				<classifier>mule-application</classifier>
                 </configuration>
 			</plugin>
