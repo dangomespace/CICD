@@ -26,6 +26,20 @@
 				<extensions>true</extensions>
 				<configuration>
 				<classifier>mule-application</classifier>
+				    <cloudHubDeployment>
+				      <uri>https://anypoint.mulesoft.com</uri>
+				      <muleVersion>${app.runtime}</muleVersion>
+				      <username>${username}</username>
+				      <password>${password}</password>
+				      <applicationName>${cloudhub.application.name}</applicationName>
+				      <environment>${environment}</environment>
+				      <region>${region}</region>
+				      <workers>${workers}</workers>
+				      <workerType>${workerType}</workerType>
+				      <properties>
+				        <key>value</key>
+				      </properties>
+				    </cloudHubDeployment>
                 </configuration>
 			</plugin>
 		</plugins>
