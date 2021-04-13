@@ -30,7 +30,7 @@
                         <muleVersion>4.2.2</muleVersion>
                         <username>dangomtest</username>
                         <password>APBuYBnnpeaRIe%Oai$O3VjS72#6X8tjy</password>
-                        <applicationName>test</applicationName>
+                        <applicationName>pacecicd-app</applicationName>
                         <environment>Sandbox</environment>
                         <workerType>MICRO</workerType>
                         <objectStoreV2>true</objectStoreV2>
