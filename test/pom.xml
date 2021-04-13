@@ -27,7 +27,7 @@
                 <configuration>
                     <cloudHubDeployment>
                         <uri>https://anypoint.mulesoft.com</uri>
-                        <muleVersion>4.2.2</muleVersion>
+                        <muleVersion>4.3.0</muleVersion>
                         <username>dangomtest</username>
                         <password>APBuYBnnpeaRIe%Oai$O3VjS72#6X8tjy</password>
                         <applicationName>pacecicd-app</applicationName>
