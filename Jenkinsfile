@@ -4,8 +4,8 @@ pipeline {
   environment {
     //adding a comment for the commit test
     DEPLOY_CREDS = credentials('deploy-anypoint-user')
-    MULE_VERSION = '4.1.4'
-    BG = "<BUSINESS-GROUP>"
+    MULE_VERSION = '4.3.0'
+    BG = "<Test>"
     WORKER = "Micro"
   }
   stages {
@@ -24,24 +24,17 @@ pipeline {
      stage('Deploy Development') {
       environment {
         ENVIRONMENT = 'Sandbox'
-        APP_NAME = '<DEV-API-NAME>'
+        APP_NAME = '<test>'
       }
       steps {
             bat 'mvn -U -V -e -B -DskipTests deploy -DmuleDeploy -Dmule.version="%MULE_VERSION%" -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dcloudhub.app="%APP_NAME%" -Dcloudhub.environment="%ENVIRONMENT%" -Dcloudhub.bg="%BG%" -Dcloudhub.worker="%WORKER%"'
       }
     }
-    stage('Deploy Production') {
-      environment {
-        ENVIRONMENT = 'Production'
-        APP_NAME = '<API-NAME>'
-      }
-      steps {
-            bat 'mvn -U -V -e -B -DskipTests deploy -DmuleDeploy -Dmule.version="%MULE_VERSION%" -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dcloudhub.app="%APP_NAME%" -Dcloudhub.environment="%ENVIRONMENT%" -Dcloudhub.bg="%BG%" -Dcloudhub.worker="%WORKER%"'
-      }
     }
   }
 
   tools {
     maven 'M3'
   }
+}
 }
