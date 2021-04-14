@@ -109,7 +109,6 @@ ns ns0 http://training.mulesoft.com/
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-		<wsc:consume doc:name="Get Transactions" doc:id="d1d289f8-381b-4b31-a63d-11434dd3ed1c" config-ref="Web_Service_Consumer_Config" operation="GetTransactionsforCustomers"/>
 		<ee:transform doc:name="Combine Accounts and Transactions" doc:id="85b0e04b-5850-4f03-a055-bccfa8d04664" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
