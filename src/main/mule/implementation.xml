@@ -57,6 +57,7 @@ output application/json
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
+		<logger level="INFO" doc:name="BU_format-fix" doc:id="a3cb32e6-7bc1-4833-9a66-3e986a2474d5" />
 	</flow>
 	<flow name="getAccountsFlow" doc:id="a67ef8c0-9b8f-4695-b177-88b07c2d6f85" >
 		<http:request method="GET" doc:name="Get Accounts" doc:id="e2a1c7ea-b31b-4ddd-97bb-dc2be55918d7" config-ref="HTTP_Request_Accounts_API" path="${accounts.endpoint}">
