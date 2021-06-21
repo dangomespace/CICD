@@ -11,14 +11,16 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-            bat 'mvn -B -U -e -V clean -DskipTests package'
+            withMaven(maven: 'maven_3.6.3')
+			sh 'mvn clean compile'
       }
     }
 
     stage('Test') {
       steps {
-          bat "mvn test"
-      }
+            withMaven(maven: 'maven_3.6.3')
+			sh 'mvn test'
+      }      }
     }
 
      stage('Deploy Development') {
@@ -27,11 +29,10 @@ pipeline {
         APP_NAME = '<test>'
       }
       steps {
-            bat 'mvn -U -V -e -B -DskipTests deploy -DmuleDeploy -Dmule.version="%MULE_VERSION%" -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dcloudhub.app="%APP_NAME%" -Dcloudhub.environment="%ENVIRONMENT%" -Dcloudhub.bg="%BG%" -Dcloudhub.worker="%WORKER%"'
+            sh 'mvn -U -V -B -DskipTests deploy -DmuleDeploy -Dmule.version="%MULE_VERSION%" -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dcloudhub.app="%APP_NAME%" -Dcloudhub.environment="%ENVIRONMENT%" -Dcloudhub.bg="%BG%" -Dcloudhub.worker="%WORKER%"'
       }
     }
     
 		}	
 
 }
-
